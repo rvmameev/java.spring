@@ -15,8 +15,19 @@ public class AppMain {
 		cart = context.getBean(Cart.class);
 		System.out.println("cart hash: " + cart.hashCode());
 
+		System.out.println("add to cart");
+
 		cart.add(3);
 		cart.add(5);
+
+		for (Product product : cart.getProducts()) {
+			System.out.println(product);
+		}
+
+		System.out.println("remove from cart");
+
+		cart.remove(4);
+		cart.remove(5);
 
 		for (Product product : cart.getProducts()) {
 			System.out.println(product);
