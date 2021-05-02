@@ -53,7 +53,7 @@ public class ProductRepository {
 			.findFirst()
 			.orElseThrow(() -> new EntityNotFoundException(product.getId(), Product.class));
 
-		product.setVersion(storeProduct.getVersion());
+		product.setVersion(storeProduct.getVersion() + 1);
 
 		store.add(product);
 		store.remove(storeProduct);
